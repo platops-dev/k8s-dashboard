@@ -242,3 +242,34 @@ func (i ingressCell) GetCreation() time.Time {
 func (i ingressCell) GetName() string {
 	return i.Name
 }
+
+type ConfigMapCell	corev1.ConfigMap
+
+func (cm ConfigMapCell) GetCreation() time.Time {
+	return cm.CreationTimestamp.Time
+}
+
+func (cm ConfigMapCell) GetName() string {
+	return cm.Name
+}
+
+
+type SecretCell	corev1.Secret
+
+func (st SecretCell) GetCreation() time.Time {
+	return st.CreationTimestamp.Time
+}
+
+func (st SecretCell) GetName() string {
+	return st.Name
+}
+
+type PersistentVolumeClaimCell	corev1.PersistentVolumeClaim
+
+func (pvc PersistentVolumeClaimCell) GetCreation() time.Time {
+	return pvc.CreationTimestamp.Time
+}
+
+func (pvc PersistentVolumeClaimCell) GetName() string {
+	return pvc.Name
+}
