@@ -76,6 +76,27 @@ func (r *router) InitApiRouter(router *gin.Engine)  {
 	GET("/api/k8s/ingress/detail", Ingress.GetIngressDetail).
 	DELETE("/api/k8s/ingress/delete", Ingress.DeleteIngress).
 	POST("/api/k8s/ingress/create", Ingress.CreateIngress).
-	PUT("/api/k8s/ingress/update", Ingress.UpdateIngress)
+	PUT("/api/k8s/ingress/update", Ingress.UpdateIngress).
+	//ConfigMap操作
+	GET("/api/k8s/configmaps", ConfigMap.GetConfigMaps).
+	GET("/api/k8s/configmap/detail", ConfigMap.GetConfigMapDetail).
+	DELETE("/api/k8s/configmap/delete", ConfigMap.DeleteConfigMap).
+	PUT("/api/k8s/configmap/update", ConfigMap.UpdateConfigMap).
+	//Secret操作
+	GET("/api/k8s/secrets", Secret.GetSecrets).
+	GET("/api/k8s/secret/detail", Secret.GetSecretDetail).
+	DELETE("/api/k8s/secret/delete", Secret.DeleteSecret).
+	PUT("/api/k8s/secret/update", Secret.UpdateSecret).
+	//PersistentVolumeClaim操作
+	GET("/api/k8s/persistentvolumeclaims", PersistentVolumeClaim.PersistentVolumeClaims).
+	GET("/api/k8s/persistentvolumeclaim/detail", PersistentVolumeClaim.GetPersistentVolumeClaimDetail).
+	DELETE("/api/k8s/persistentvolumeclaim/delete", PersistentVolumeClaim.DeletePersistentVolumeClaim).
+	PUT("/api/k8s/persistentvolumeclaim/update", PersistentVolumeClaim.UpdatePersistentVolumeClaim).
+	//Workflow操作
+	GET("/api/k8s/workflows", Workflow.GetList).
+	GET("/api/k8s/workflow/detail", Workflow.GetById).
+	POST("/api/k8s/workflow/create", Workflow.CreateWorkflow).
+	DELETE("/api/k8s/workflow/delete", Workflow.DelById)
+
 }
 
